@@ -188,8 +188,6 @@
 
 
 
-
-
     /* for calendar  */
 </style>
 
@@ -252,7 +250,7 @@
     </div>
 
 
-    <div class="container mx-auto px-2 lg:px-14 py-3 bg-[#F8F8F8] mt-10 ">
+    <div class="container mx-auto px-2 lg:px-10 py-3 bg-[#F8F8F8] mt-10 ">
         <div class="w-full bg-cover bg-center aspect-video rounded-lg"
             style="background-image: url('./assets/herphoto/her2.jpg'); border-radius: 10px;">
             <div
@@ -303,9 +301,9 @@
 
     <div class="bg-white">
         <div class="container mx-auto  px-2 lg:px-14  py-3 mt-24 ">
-            <div class="w-full lg:pb-24 pb-12">
+            <div class="w-full lg:pb-24 pb-10">
                 <div class="mt-10">
-                    <span class="font-normal capitalize text-lg ">About summary</span>
+                    <span class="font-medium capitalize text-lg text-indigo-700">About summary</span>
                 </div>
 
                 <div class="mt-10 grid lg:grid-cols-3 grid-cols-1">
@@ -391,50 +389,28 @@
     </div>
 
     <div class="bg-white">
-        <div class="container mx-auto px-2 lg:px-14  py-3">
-            <div class="grid grid-cols-4 gap-16 lg:mt-10 mt-5">
-                <div class="border border-gray-300 border-b-gray-100 flex justify-center rounded-md p-5 countdown-container">
-                    <div class="flex flex-col justify-center items-center space-y-4 ">
-                        <span class="text-normal font-medium uppercase ">Days</span>
-                        <p class="text-4xl font-semibold" id="days">12</p>
-                    </div>
-                </div>
-                <div class="border borde border-gray-300 border-b-gray-100 flex justify-center rounded-md p-5">
-                    <div class="flex flex-col justify-center items-center space-y-4">
-                        <span class="text-normal font-medium uppercase ">Hours</span>
-                        <p class="text-4xl font-semibold" id="hours">12</p>
-                    </div>
-                </div>
-                <div class="border bordeborder-gray-300 border-b-gray-100 flex justify-center rounded-md p-5">
-                    <div class="flex flex-col justify-center items-center space-y-4">
-                        <span class="text-normal font-medium uppercase ">Minutes</span>
-                        <p class="text-4xl font-semibold" id="minutes">12</p>
-                    </div>
-                </div>
-                <div class="border borde border-gray-300 border-b-gray-100 flex justify-center rounded-md p-5">
-                    <div class="flex flex-col justify-center items-center space-y-4">
-                        <span class="text-normal font-medium uppercase ">Seconds</span>
-                        <p class="text-4xl font-semibold" id="seconds">12</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    <div class="bg-white">
         <div class="container mx-auto px-2 lg:px-14  py-3 ">
-            <div class="w-full h-[100vh] mt-64">
-                    <div class="w-full flex flex-col justify-center items-center">
-                          <span class="capitalize font-normal">All of the</span>
-                          <p class="font-bold text-[100px] uppercase mt-2">Whishes</p>
-                          <p class="font-medium text-lg">From My Lovely Friends</p>
+            <div class="grid grid-cols-4 gap-16">
+                <div class="border-t border-b border-gray-300 flex justify-center p-5">
+                    <div class="flex flex-col justify-center items-center">
+                        <span class="text-normal font-medium uppercase ">Days</span>
+                        <p class="text-3xl font-semibold">12</p>
                     </div>
+                </div>
+                <div class="border-t border-green-600 flex justify-center">
+                    <div>Hours</div>
+                </div>
+                <div class="border-t border-green-600 flex justify-center">
+                    <div>Minutes</div>
+                </div>
+                <div class="border-t border-green-600 flex justify-center">
+                    <div>Seconds</div>
+                </div>
+
             </div>
         </div>
-
     </div>
+
 
 
 
@@ -458,47 +434,6 @@
         }
 
         setInterval(toggleHiddenClass, 3000);
-
-
-        // for countdown 
-
-        const storeopening = new Date(`dec 14, ${date.getUTCFullYear()} 00:00:00`);
-
-        setInterval(function () {
-            setcountdown(storeopening);
-
-        }, 1000);
-
-        function setcountdown(countdowntime) {
-            let now = new Date();
-            let remainingtime = countdowntime - now;
-
-            let seconds = Math.floor(remainingtime / 1000) % 60;
-            let minutes = Math.floor(remainingtime / (1000 * 60)) % 60;
-            let hours = Math.floor(remainingtime / (1000 * 60 * 60)) % 24;
-            let days = Math.floor(remainingtime / (1000 * 60 * 60 * 24));
-
-            let daystodisplay = days.toString().padStart(2,'0');
-            let hourstodisplay = hours.toString().padStart(2,'0');
-            let minutestodisplay = minutes.toString().padStart(2, '0'); 
-            let secondstodisplay = seconds.toString().padStart(2, '0'); 
-
-
-            console.log(daystodisplay, hourstodisplay, minutestodisplay, secondstodisplay);
-
-            const getdays = document.getElementById('days').innerHTML = daystodisplay;
-            const gethours = document.getElementById('hours').innerHTML = hourstodisplay;
-            const getminutes = document.getElementById('minutes').innerHTML = minutestodisplay;
-            const getsec = document.getElementById('seconds').innerHTML = secondstodisplay;
-
-
-
-
-
-        }
-
-
-
 
     </script>
 
