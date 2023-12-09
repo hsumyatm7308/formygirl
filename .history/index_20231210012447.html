@@ -726,10 +726,6 @@
 
 
 
-    .togglemodal {
-        display: none;
-    }
-
 
     /* for calendar  */
 </style>
@@ -795,7 +791,7 @@
 
     <div class="">
         <div
-            class="container mx-auto px-2 lg:px-14  py-4  bg-transparent flex justify-center items-center fixed bottom-4 z-30  space-x-4">
+            class="container mx-auto px-2 lg:px-14  py-4  bg-transparent flex justify-center items-center fixed bottom-4 z-20  space-x-4">
 
             <div class="bg-gray-300">
 
@@ -989,21 +985,21 @@
 
 
 
-    <div>
+    <div id="towritebtn">
         <div
-            class="container mx-auto px-2 lg:px-14  py-4  bg-transparent flex justify-end items-start fixed bottom-4 z-30  space-x-4 towritebtn">
-            <div id=""
-                class="h-14  bg-[var(--bg-secondary)] opacity-80 hover:opacity-100 cursor-pointer flex justify-center items-center rounded-md px-3 py-3 ">
+            class="container mx-auto px-2 lg:px-14  py-4  bg-transparent flex justify-end items-start fixed bottom-4 z-20  space-x-4">
+            <div
+                class="h-14  bg-[var(--bg-secondary)] opacity-80 hover:opacity-100 cursor-pointer flex justify-center items-center rounded-md px-3 py-3">
 
 
-                <div class="w-full h-full flex justify-center items-center text-white space-x-1 ">
+                <div class="w-full h-full flex justify-center items-center text-white space-x-1">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                     </svg>
 
-                    <span class=" font-medium "> To write</span>
+                    <span class=" font-medium"> To write</span>
 
                 </div>
             </div>
@@ -1011,49 +1007,43 @@
 
     </div>
 
+    
+    <div id="write-modal"
+        class="container px-2 lg:px-14  py-4  bg-transparent flex justify-end items-center fixed lg:bottom-4 bottom-0 z-20  space-x-4">
 
-    <div class="write-modal hidden">
+        <div class="w-screen h-screen bg-[linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))] fixed left-0 top-0 modal-dialogs"></div>
 
-        <div id=""
-            class="container px-2 lg:px-14  py-4  bg-transparent flex justify-end items-center fixed lg:bottom-4 bottom-0 z-40  space-x-4 ">
+        <!-- to write  -->
+        <div class="lg:w-[30%] w-[100%] bg-[var(--bg-secondary)] border rounded-l-lg px-5 py-3 text-white absolute bottom-4">
 
-            <div
-                class="w-screen h-screen bg-[linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))] fixed left-0 top-0 modal-dialogs ">
-            </div>
+            <div class="flex justify-end items-center modal-dialogs">
+                <div class="bg-[linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))] p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
 
-            <!-- to write  -->
-            <div
-                class="lg:w-[30%] w-[100%] bg-[var(--bg-secondary)]  rounded-l-lg px-5 py-3 text-white absolute bottom-4 z-10">
-
-                <div class="flex justify-end items-center modal-dialogs">
-                    <div class="bg-[linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))] p-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-
-                    </div>
                 </div>
-
-                <form action="" class="w-full h-full flex flex-col text-white">
-                    <input type="text" class="name bg-transparent p-3 outline-none"
-                        placeholder="Please let me know your name">
-                    <textarea name="" id="" class="resize-none bg-transparent focus:outline-none p-3" rows="10"
-                        placeholder="Write Something you want to wish"></textarea>
-
-
-
-                    <div class="w-full flex justify-center items-end mt-5 border border-white py-2 hover:border-black">
-                        <button type="submit " class="">Send</button>
-                    </div>
-                </form>
             </div>
 
+            <form action="" class="w-full h-full flex flex-col text-white">
+                <input type="text" class="name bg-transparent p-3 outline-none"
+                    placeholder="Please let me know your name">
+                <textarea name="" id="" class="resize-none bg-transparent focus:outline-none p-3" rows="10"
+                    placeholder="Write Something you want to wish"></textarea>
 
 
+
+                <div class="w-full flex justify-center items-end mt-5 border border-white py-2">
+                    <button type="button">Send</button>
+                </div>
+            </form>
         </div>
 
+
+
     </div>
+
 
 
 
@@ -1821,26 +1811,22 @@
 
 
             // modal 
-            var getmddialog = document.querySelectorAll('.modal-dialogs');
-            var gettowrite = document.querySelector('.write-modal');
+             var getmddialog =  document.querySelectorAll('.modal-dialogs');
+             var gettowrite = document.getElementById('write-modal');
+             var towritebtn = document.getElementById('towritebtn');
 
-            function closemodal() {
+             function closemodal(){
+                gettowrite.classList.add('hidden')
+             }
+
+             function openmodal(){
                 gettowrite.classList.toggle('hidden')
-            }
+             }
+             for(var x=0; x < getmddialog.length;x++){
+                getmddialog[x].addEventListener('click',closemodal);
+             }
 
-            function openmodal() {
-                gettowrite.classList.toggle('hidden')
-            }
-            for (var x = 0; x < getmddialog.length; x++) {
-                getmddialog[x].addEventListener('click', closemodal);
-            }
 
-            var towritebtn = document.querySelector('.towritebtn');
-
-            towritebtn.addEventListener('click', function(){
-                closemodal()
-                console.log('hi')
-            });
 
         </script>
 

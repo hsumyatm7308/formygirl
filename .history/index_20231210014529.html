@@ -726,7 +726,7 @@
 
 
 
-    .togglemodal {
+    .write-modal {
         display: none;
     }
 
@@ -991,7 +991,7 @@
 
     <div>
         <div
-            class="container mx-auto px-2 lg:px-14  py-4  bg-transparent flex justify-end items-start fixed bottom-4 z-30  space-x-4 towritebtn">
+            class="container mx-auto px-2 lg:px-14  py-4  bg-transparent flex justify-end items-start fixed bottom-4 z-30  space-x-4">
             <div id=""
                 class="h-14  bg-[var(--bg-secondary)] opacity-80 hover:opacity-100 cursor-pointer flex justify-center items-center rounded-md px-3 py-3 ">
 
@@ -1012,10 +1012,10 @@
     </div>
 
 
-    <div class="write-modal hidden">
+    <div class=" write-modal">
 
         <div id=""
-            class="container px-2 lg:px-14  py-4  bg-transparent flex justify-end items-center fixed lg:bottom-4 bottom-0 z-40  space-x-4 ">
+            class="container px-2 lg:px-14  py-4  bg-transparent flex justify-end items-center fixed lg:bottom-4 bottom-0 z-20  space-x-4 ">
 
             <div
                 class="w-screen h-screen bg-[linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))] fixed left-0 top-0 modal-dialogs ">
@@ -1044,7 +1044,7 @@
 
 
                     <div class="w-full flex justify-center items-end mt-5 border border-white py-2 hover:border-black">
-                        <button type="submit " class="">Send</button>
+                        <button type="submit " class="towritebtn">Send</button>
                     </div>
                 </form>
             </div>
@@ -1825,22 +1825,24 @@
             var gettowrite = document.querySelector('.write-modal');
 
             function closemodal() {
-                gettowrite.classList.toggle('hidden')
+                gettowrite.classList.toggle('togglemodal')
             }
 
             function openmodal() {
-                gettowrite.classList.toggle('hidden')
+                gettowrite.classList.toggle('togglemodal')
             }
             for (var x = 0; x < getmddialog.length; x++) {
                 getmddialog[x].addEventListener('click', closemodal);
             }
 
-            var towritebtn = document.querySelector('.towritebtn');
+            // var towritebtn = document.querySelector('.towritebtn');
 
-            towritebtn.addEventListener('click', function(){
-                closemodal()
-                console.log('hi')
-            });
+            // document.addEventListener('DOMContentLoaded', function () {
+            //     var towritebtn = document.querySelector('.towritebtn');
+            //     towritebtn.addEventListener('click', function () {
+            //         console.log('hi');
+            //     });
+            // });
 
         </script>
 
