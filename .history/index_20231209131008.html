@@ -165,7 +165,7 @@
 
 
 
-
+/* 
     .visit-container:hover .text-container {
         display: inline-block;
         background: rgba(255, 255, 255, 0.5);
@@ -174,7 +174,7 @@
         transition: all .3s ease-in;
         transform: translateY(-50%);
 
-    }
+    } */
 
     .text-container span {
         display: block;
@@ -195,6 +195,14 @@
 
 
 
+    /* @media (max-width: 767px) {
+
+        /* Styles for smaller screens, e.g., mobile devices */
+        /* .aspect-video {
+            width: 100%;
+        }
+    } */ */
+
 
     .underline-custom {
         text-decoration-color: gray;
@@ -203,6 +211,21 @@
 
 
 
+    .aspect-ratio-container {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* Adjust this value to match the desired aspect ratio (height/width * 100%) */
+    overflow: hidden;
+}
+
+.aspect-ratio-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 
 
@@ -272,10 +295,14 @@
 
 
     <div class="container mx-auto px-2 lg:px-14 py-4 bg-[#F8F8F8] md:mt-10 mt-5">
-        <div class="w-full bg-cover bg-center aspect-video rounded-lg"
-            style="background-image: url('./assets/herphoto/her2.jpg'); border-radius: 10px;">
+        <div class="w-full bg-cover bg-center aspect-video rounded-lg">
             <div
                 class="w-full h-full bg-[linear-gradient(rgb(0,0,0,.2),rgb(0,0,0,.5))] hover:bg-[linear-gradient(rgb(0,0,0,.5),rgb(0,0,0,.5))] rounded-lg flex items-end relative slider-text visit-button-hover">
+
+
+                <div class="aspect-ratio-container">
+                    <img src="./assets/herphoto/her2.jpg" alt="" class="object-fit aspect-ratio-content">
+                </div>
 
                 <div class="px-10 absolute textonphoto self-end justify-self-end">
                     <div class="text-white md:text-xl text-md font-normal">Happy</div>
